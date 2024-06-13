@@ -1,0 +1,12 @@
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+
+app = FastAPI()
+
+# Serve static files like favicon.ico from the "static" directory
+app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}

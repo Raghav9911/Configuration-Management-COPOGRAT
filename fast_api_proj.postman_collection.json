@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "67515fc4-891c-4426-960d-9fd1e7072f4f",
+		"name": "fast_api_proj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36282703"
+	},
+	"item": [
+		{
+			"name": "create_configuration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country_code\": \"FR\",\r\n    \"requirements\": {\r\n        \"business_name\": {\r\n            \"regex\": \"^[A-Za-z0-9\\\\- '&.]+$\"\r\n        },\r\n        \"siret_number\": {\r\n            \"regex\": \"^[0-9]{14}$\"\r\n        }\r\n    }\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create_configuration/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create_configuration",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/get_configuration/AU",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"get_configuration",
+						"AU"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_configuration",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/delete_configuration/DE",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"delete_configuration",
+						"DE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_configuration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country_code\": \"IN\",\r\n    \"requirements\": {\r\n        \"business_name\": {\r\n            \"regex\": \"^[A-Za-z0-9\\\\- '&.]+$\"\r\n        },\r\n        \"pan_number\": {\r\n            \"regex\": \"^[A-Z]{5}[0-9]{4}[A-Z]{1}$\"\r\n        },\r\n        \"gstin_number\": {\r\n            \"regex\": \"^\\\\d{2}[A-Z]{5}\\\\d{4}[A-Z]{1}\\\\d[Z]{1}[A-Z\\\\d]{1}$\"\r\n        }\r\n    }\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/update_configuration/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"update_configuration",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
